@@ -1,6 +1,6 @@
 # Wilkommen auf der Webseite :D!
 
-## Modul 300
+## Modul300
 
 **Thema:** Plattformübergreifende Dienste in ein Netzwerk integrieren
 
