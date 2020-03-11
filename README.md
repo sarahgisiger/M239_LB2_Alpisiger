@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # m300tbz# Wilkommen auf der Webseite :D!
 
 ## Modul 300
@@ -11,3 +12,6 @@
 ## Link
 
  [Link zu Google](https://google.com/)
+=======
+# m300tbz
+>>>>>>> 4c20c983809cfbaf4b52b2bd54e6641c927ebb6e
