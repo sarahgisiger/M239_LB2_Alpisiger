@@ -1,0 +1,18 @@
+Vagrant.configure(2) do |config|
+  config.vm.box = "ubuntu/xenial64"
+
+  #Hier wird die Port-Weiterleitung eingerichtet
+  config.vm.network "forwarded_port", guest:80, host:1657, auto_correct: true
+  config.vm.synced_folder ".", "/var/www/html"
+
+#hier wird angegeben, dass die VM auf Virtualbox läuft & dass die Maschine 1GB RAM
+config.vm.provider "virtualbox" do |vb|
+  vb.memory = "1024"  
+end
+
+#Hier wird angegeben, dass in der Shell Apache2 installiert werden soll
+config.vm.provision "shell", inline: <<-SHELL
+  sudo apt-get update
+  sudo apt-get -y install apache2 
+SHELL
+end
