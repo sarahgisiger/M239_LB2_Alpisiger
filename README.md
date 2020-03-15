@@ -1,7 +1,9 @@
 # Dokumentation LB2
 ## Modul300
 **Modul 300:** Plattformübergreifende Dienste in ein Netzwerk integrieren
+
 **Autor:** Sarah Gisiger
+
 **Datum:** 15.03.20
 
 ## Allgemeines
