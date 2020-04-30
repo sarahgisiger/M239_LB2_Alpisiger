@@ -1,13 +1,11 @@
 # Dokumentation LB2
-## Modul300
-**Modul 300:** Plattformübergreifende Dienste in ein Netzwerk integrieren
-
-**Autor:** Sarah Gisiger
-
-**Datum:** 15.03.20
+## Modul239
+**Modul 239:** Internetserver in Betrieb nehmen integrieren
+**Autor:** Sarah Gisiger, Matay Alp
+**Datum:** 30.04.20
 
 ## Allgemeines
-Mein Vagrantfile habe ich so geschrieben, dass es drei VM's erstellt. Für alle VM's habe ich jeweils 'ubuntu/xenial64' als Box verwendet. Nachfolgend werden die drei VM's beschrieben:
+Unser Vagrantfile haben wir so geschrieben, sodass es drei VM's erstellt. Für alle VM's haben wir jeweils 'ubuntu/xenial64' als Box verwendet. Nachfolgend werden die drei VM's beschrieben:
 
 ### LB2_web
 #### Fakten
@@ -18,12 +16,12 @@ Mein Vagrantfile habe ich so geschrieben, dass es drei VM's erstellt. Für alle 
 >- **[Link zur Index-Seite](http://localhost:1657/)**
 
 #### Weiteres
-> Die Index Seite habe ich selber erstellt. Ich habe nur etwas einfaches gemacht, da es nicht weiter relevant für die LB ist. Damit das GIF auf der Seite angezeigt wird, muss die Datei 'theoffice.gif' zwingend vorhanden sein. 
+> Die Index Seite haben wir selber erstellt. Wir suchten ein Template aus dem Internet raus und änderten es etwas ab. Da die Webseite selbst nicht weiter relevant für die LB ist, haben wir sie einfach gehalten und auch nicht vervollständigt. 
 > 
 > Desweiteren ist der Link zum Share und zur Datenbank ebenfalls auf der Index Seite verlinkt.
 
 #### Vorgehen
-> Um meine eigene Index Seite verwenden zu können, habe ich im Vagrantfile den Pfad unter synced_folder folgendermassen abgeändert: **web.vm.synced_folder ".", "/var/www/html"**
+> Um unsere Index Seite verwenden zu können, haben wir im Vagrantfile den Pfad unter synced_folder folgendermassen abgeändert: **web.vm.synced_folder ".", "/var/www/html"**
 
 #### Bild
 ![ ](./indexseite.png "Index Seite")
@@ -31,20 +29,134 @@ Mein Vagrantfile habe ich so geschrieben, dass es drei VM's erstellt. Für alle 
 #### Code
 ##### HTML
 ```css
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <title>Meine Index Seite</title>
-  </head>
-  <body>
-    <p>Hello :)</p>
-    <IMG SRC="theoffice.gif">
-    <br><br>
-    <h1>Link</h1>
-    <a href="http://localhost:1680/">Link zum Share</a>
-    <br>
-    <a href="http://localhost:1670/adminer.php">Link zur DB</a>
-  </body>
+	<head>
+		<title>Alpisiger</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo"><strong>Alpisiger</strong></a>
+					<nav id="nav">
+						<a href="index.html">Home</a>
+						<a href="generic.html">Generic</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<header>
+						<h1>Willkommen bei Alpisiger</h1>
+					</header>
+
+					<img src="images/logo.png" alt="Logo" />
+
+					<div class="flex ">
+
+						<div>
+							<span class="icon fa-car"></span>
+							<h3>Aliquam</h3>
+							<p>Suspendisse amet ullamco</p>
+						</div>
+
+						<div>
+							<span class="icon fa-camera"></span>
+							<h3>Links</h3>
+							<a href="http://localhost:1680/">Link zum Share</a>
+							<br><br>
+							<a href="http://localhost:1670/adminer.php">Link zur DB</a>
+						</div>
+
+						<div>
+							<span class="icon fa-bug"></span>
+							<h3>Ultrices</h3>
+							<p>Nulla vitae mauris non felis</p>
+						</div>
+					</div>
+
+					<footer>
+						<a href="#" class="button">Get Started</a>
+					</footer>
+				</div>
+			</section>
+
+
+		<!-- Three -->
+			<section id="three" class="wrapper align-center">
+				<div class="inner">
+					<div class="flex flex-2">
+						<article>
+							<div class="image round">
+								<img src="images/pic01.jpg" alt="Pic 01" />
+							</div>
+							<header>
+								<h3>Lorem ipsum<br /> dolor amet nullam</h3>
+							</header>
+							<p>Morbi in sem quis dui placerat ornare. Pellentesquenisi<br />euismod in, pharetra a, ultricies in diam sed arcu. Cras<br />consequat  egestas augue vulputate.</p>
+							<footer>
+								<a href="#" class="button">Learn More</a>
+							</footer>
+						</article>
+						<article>
+							<div class="image round">
+								<img src="images/pic02.jpg" alt="Pic 02" />
+							</div>
+							<header>
+								<h3>Sed feugiat<br /> tempus adipicsing</h3>
+							</header>
+							<p>Pellentesque fermentum dolor. Aliquam quam lectus<br />facilisis auctor, ultrices ut, elementum vulputate, nunc<br /> blandit ellenste egestagus commodo.</p>
+							<footer>
+								<a href="#" class="button">Learn More</a>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+
+					<h3>Get in touch</h3>
+
+					<form action="#" method="post">
+
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input name="name" id="name" type="text" placeholder="Name">
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input name="email" id="email" type="email" placeholder="Email">
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input value="Send Message" class="button alt" type="submit"></li>
+						</ul>
+					</form>
+
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
 ```
 ##### Vagrant - nur für LB2_web
@@ -85,11 +197,11 @@ end
 #### Weiteres
 > Damit der Share funktioniert, wird der Folder './share' benötigt.
 > 
-> In diesem Share werden alle Datein vom Ordner angezeigt. Wenn eine Datei geändert wird, wird dies ebenfalls auf der Seite gezeigt. 
+> In diesem Share werden alle Dateien vom Ordner angezeigt. Wenn eine Datei geändert wird, wird dies ebenfalls auf der Seite gezeigt. 
 
 
 #### Vorgehen
-> Damit der Share funktioniert muss zuerst ein Ornder erstellt werden, welcher anschliessend geshared wird. Dafür habe ich ein Ordner namens 'share' erstellt. Anschliessend muss der Pfad im Vagrantfile unter synced_folder folgendermassen abgeändert werden: **web.vm.synced_folder "./share", "/var/www/html"**
+> Damit der Share funktioniert muss zuerst ein Ordner erstellt werden, welcher anschliessend geshared wird. Dafür haben wir ein Ordner namens 'share' erstellt. Anschliessend muss der Pfad im Vagrantfile unter synced_folder folgendermassen abgeändert werden: **web.vm.synced_folder "./share", "/var/www/html"**
 > 
 > Wichtig hier ist, dass im Vagrantfile in der Shell angegeben wird, dass die Index Seite, welche Apache standardmässig erstellt, gelöscht wird. Falls dies nicht gemacht wird, sieht man nicht den Share, sondern die Standard-Index Seite von Apache.
 
@@ -134,15 +246,15 @@ end
 >- **Installierte Dienste:** Apache, PHP, debconf-utils
 >- **Portweitetleitung:** Port 1670
 >- ~~**Synchronisierter Folder:**~~ 
->- **Anmeldedaten:** Benutzer = root, Passwort = admin
->- **[Link zum Share](http://localhost:1670/adminer.php)**
+>- **Anmeldedaten:** Benutzer = root, Passwort = Pas$worD
+>- **[Link zur DB](http://localhost:1670/adminer.php)**
 
 #### Weiteres
-> Als Vorlage für diese VM habe ich das Vagrantfile von [hier](https://github.com/mc-b/M300/tree/master/vagrant/db) verwendet. 
+> Als Vorlage für diese VM haben wir das Vagrantfile von [hier](https://github.com/mc-b/M300/tree/master/vagrant/db) verwendet. 
 
 
 #### Vorgehen
-> Ich habe die Vorlage verwendet. Zuerst habe ich mir das File angeschaut und Zeilen, die ich nicht verstanden habe, nachgeschaut. Anschliessend habe ich selber ein paar Kleinigkeiten abgeändert und noch etwas dazu Kommentiert.
+> Wir haben die Vorlage verwendet. Zuerst haben wir uns das File angeschaut und Zeilen, die wir nicht verstanden, nachgeschaut. Anschliessend haben wir selber ein paar Kleinigkeiten abgeändert und noch etwas dazu Kommentiert.
 
 #### Bild
 ![ ](./db.png "Datenbank")
@@ -170,8 +282,8 @@ config.vm.define "db" do |db|
     sudo apt-get update
     sudo apt-get -y install debconf-utils
     sudo apt-get -y install apache2
-    sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password admin'
-    sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password admin'
+    sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password Pas$worD'
+    sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password Pas$worD'
     sudo apt-get -y install php libapache2-mod-php php-curl php-cli php-mysql php-gd mysql-client mysql-server
      
     #Herunterladen von 'latest.php' in das erstellte Verzeichnis & schliesslich Restart von Apache 
@@ -268,8 +380,8 @@ Vagrant.configure(2) do |config|
       sudo apt-get update
       sudo apt-get -y install debconf-utils
       sudo apt-get -y install apache2
-      sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password admin'
-      sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password admin'
+      sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password Pas$worD'
+      sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password Pas$worD'
       sudo apt-get -y install php libapache2-mod-php php-curl php-cli php-mysql php-gd mysql-client mysql-server
        
       #Herunterladen von 'latest.php' in das erstellte Verzeichnis & schliesslich Restart von Apache 
@@ -292,4 +404,3 @@ end
  [Link zum Share](http://localhost:1680/)
 
 [Link zur DB](http://localhost:1670/adminer.php)
-
