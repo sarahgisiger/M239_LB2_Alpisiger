@@ -79,8 +79,8 @@ Vagrant.configure(2) do |config|
       sudo apt-get update
       sudo apt-get -y install debconf-utils
       sudo apt-get -y install apache2
-      sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password admin'
-      sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password admin'
+      sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password Pas$worD'
+      sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password Pas$worD'
       sudo apt-get -y install php libapache2-mod-php php-curl php-cli php-mysql php-gd mysql-client mysql-server
        
       #Herunterladen von 'latest.php' in das erstellte Verzeichnis & schliesslich Restart von Apache 
