@@ -292,3 +292,4 @@ end
  [Link zum Share](http://localhost:1680/)
 
 [Link zur DB](http://localhost:1670/adminer.php)
+
